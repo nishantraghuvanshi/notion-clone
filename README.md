@@ -1,4 +1,4 @@
-## Notion Clone
+### Notion Clone
 
 Things I learned:
 
@@ -18,4 +18,16 @@ Things I learned:
 - dynamic classname using cn (@/lib/utils). I need to read more about this. This is basically like the classnames library that can be installed using npm. Using this I can put conditions to render a specific thing.
 
 - learned about next-themes and theme-provider using [shadcn](https://ui.shadcn.com/docs)
-- 
+
+- Watch 5th N 8th video of codewithantonio for the following:
+    - Use of convex for backend. REVISE: How to make schemas and how to add to database.[docs](https://docs.convex.dev/home)
+
+    - Use of clerk for auth.[docs](https://clerk.com/docs)
+
+    - Use of lucide react library.
+
+- TODO ->Event handling: Like event:Ract.MouseEvent<HTMLDivElement,MouseEvent>. This helps in defining the type of the evene. Still need to look into this.
+
+- TODO ->use of asChild prop. It is used to delegate something as a child of its parent element? I don't get this one. Need to figure it out.
+
+- Use of sonner library for a toaster.(pop up)

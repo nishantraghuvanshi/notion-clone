@@ -29,7 +29,7 @@ const Navbar = () => {
                 </SignInButton>
                 <SignInButton mode="modal">
                     <Button size="sm">
-                        Get Jotion free
+                        Get Zotion free
                     </Button>
                 </SignInButton>
                 </div>
@@ -39,7 +39,7 @@ const Navbar = () => {
                 <div className="flex justify-between gap-x-4">
                 <Button size="sm" asChild>
                     <Link href="/documents">
-                        Enter Jotion
+                        Enter Zotion
                     </Link>
                 </Button>
                 <UserButton 

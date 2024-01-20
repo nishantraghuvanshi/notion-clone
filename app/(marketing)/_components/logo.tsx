@@ -28,7 +28,7 @@ export const Logo = () =>{
             className='hidden dark:block'
             />
             <p className={cn("font-semibold",font.className)}>
-              Jotion  
+              Zotion
             </p>
         </div>
     )
