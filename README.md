@@ -31,3 +31,5 @@ Things I learned:
 - TODO ->use of asChild prop. It is used to delegate something as a child of its parent element? I don't get this one. Need to figure it out.
 
 - Use of sonner library for a toaster.(pop up)
+
+- {!!id} -> turns this into a boolean expression. Basically this will return true or false based on if their is id or not.

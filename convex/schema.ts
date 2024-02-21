@@ -2,6 +2,8 @@ import { defineSchema,defineTable } from "convex/server";
 import {v} from "convex/values";
 import { Content } from "next/font/google";
 
+
+// Schema is used to define the structure of the data
 export default defineSchema({
     documents: defineTable({
         title: v.string(),

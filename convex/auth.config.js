@@ -1,3 +1,4 @@
+// This is the configuration file for the authentication service
 export default {
   providers: [
     {

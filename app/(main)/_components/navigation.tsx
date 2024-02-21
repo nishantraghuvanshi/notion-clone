@@ -1,13 +1,16 @@
 "use client"
 
 import { cn } from '@/lib/utils'
-import { ChevronsLeft, MenuIcon } from 'lucide-react'
+import { ChevronsLeft, MenuIcon, PlusCircle, Search, Settings } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import React, { ElementRef, use, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import UserItem from './user-item'
-import { useQuery } from 'convex/react'
+import { useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
+import Item from './item'
+import { toast } from 'sonner'
+import { DocumentList } from './document-list'
 
 
 const Navigation = () => {
@@ -18,7 +21,7 @@ const Navigation = () => {
     const navbarRef = useRef<ElementRef<"div">>(null)
     const [isResetting, setIsResetting] = useState(false)
     const [isCollapsed, setIsCollapsed] = useState(isMobile)
-    const documents= useQuery(api.documents.get);
+    const create= useMutation(api.documents.create);
 
     useEffect(() => {
         if(isMobile){
@@ -91,6 +94,16 @@ const Navigation = () => {
         }
     }
 
+    const handleCreate =  () => {
+        const promise = create({title:"New Note"});
+
+        toast.promise(promise,{
+            loading: "Creating...",
+            success: "New Note created!",
+            error: "Error creating note"
+        })
+    }
+
     return (
     <>
     <aside
@@ -109,12 +122,25 @@ const Navigation = () => {
         
         <div>
             <UserItem/>
+            <Item
+            onClick={handleCreate}
+            label="New Page"
+            icon={PlusCircle}
+            />
+            <Item
+            label="Search"
+            icon={Search}
+            isSearch
+            onClick={()=>{}}
+            />
+            <Item
+            label="Settings"
+            icon={Settings}
+            onClick={()=>{}}
+            />
         </div>
         <div className="mt-4">
-            {documents?.map((document) => (
-                <div key={document._id}>
-                    {document.title}
-                </div>))}
+            <DocumentList />
         </div>
         <div 
         onMouseDown={handleMouseDown}
