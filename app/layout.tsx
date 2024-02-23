@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   description: 'Productivity app ',
   icons: [{
     media: '(prefers-color-scheme: dark)',
-    url:"/logo-dark.svg",
-    href: '/logo-dark.svg',
+    url:"/logoz-dark.png",
+    href: '/logoz-dark.png',
   },
   {
     media: '(prefers-color-scheme: light)',
-    url:"/logo.svg",
-    href: '/logo.svg',
+    url:"/logoz-light.png",
+    href: '/logoz-light.png',
   }]
 }
 
