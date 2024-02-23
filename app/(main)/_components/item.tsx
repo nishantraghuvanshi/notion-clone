@@ -26,7 +26,7 @@ interface Props {
     level?: number;
     onExpand?: () => void;
     label: string;
-    onClick: () => void;
+    onClick?: () => void;
     icon: LucideIcon;
 }
 
@@ -142,7 +142,7 @@ const Item = ({
             )}
             {!!id && (
                 <div className="ml-auto flex items-center gap-x-2">
-                     <DropdownMenu>
+            <DropdownMenu>
             <DropdownMenuTrigger
               onClick={(e) => e.stopPropagation()}
               asChild

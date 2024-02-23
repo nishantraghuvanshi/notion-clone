@@ -64,7 +64,7 @@ export const DocumentList = (
     }
     // style in p tag is used to set the padding left based on the level
     return (
-        <>
+        <div>
         <p
             style={{
                 paddingLeft: level ? `${(level * 12) + 12}px` : "12px",
@@ -75,7 +75,7 @@ export const DocumentList = (
                 level === 0 && "block"
             )}
             >
-            No Pages Inside
+            No Items Inside
         </p>
         {documents.map(document => (
             <div key={document._id}>
@@ -97,6 +97,6 @@ export const DocumentList = (
                     />)}
             </div>
         ))}   
-        </>
+        </div>
     )
 }
