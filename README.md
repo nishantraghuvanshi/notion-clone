@@ -33,3 +33,7 @@ Things I learned:
 - Use of sonner library for a toaster.(pop up)
 
 - {!!id} -> turns this into a boolean expression. Basically this will return true or false based on if their is id or not.
+
+- [documentId] method to index the notes pages and its use. Basically square brackets make it dynamic.
+
+- Skeleton is basically to show like an outline of a thing that is going to load.

@@ -1,24 +1,26 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Toaster } from 'sonner'
+
 import { ThemeProvider } from '@/components/provider/theme-provider'
 import { ConvexClientProvider } from '@/components/provider/convex-provider'
-import { Toaster } from 'sonner'
+import { ModalProvider } from '@/components/provider/model-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Jotion',
+  title: 'Zotion',
   description: 'Productivity app ',
   icons: [{
     media: '(prefers-color-scheme: dark)',
-    url:"/logoz-dark.png",
-    href: '/logoz-dark.png',
+    url:"/logoz-light.png",
+    href: '/logoz-light.png',
   },
   {
     media: '(prefers-color-scheme: light)',
-    url:"/logoz-light.png",
-    href: '/logoz-light.png',
+    url:"/logoz-dark.png",
+    href: '/logoz-dark.png',
   }]
 }
 
@@ -38,6 +40,7 @@ export default function RootLayout({
         disableTransitionOnChange
         storageKey="jotion-theme">
           <Toaster position='bottom-center'/>
+          <ModalProvider />
           {children}
           </ThemeProvider>
         </ConvexClientProvider>

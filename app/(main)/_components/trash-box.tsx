@@ -62,7 +62,7 @@ export const TrashBox = () => {
             <Spinner size="lg"/>
         </div>)
     }
-    
+
 
   return (
     <div className='text-sm'>
@@ -85,27 +85,31 @@ export const TrashBox = () => {
                 key={doc._id}
                 role='button'
                 onClick={()=>onClick(doc._id)}
-                className='text-sm rounded-sm w-full hover:bg-primary/5
-                 flex items-center text-primary justify-between '
+                className="flex text-sm rounded-sm w-full hover:bg-primary/5
+                  items-center text-primary justify-between"
                 >
                     <span className='truncate pl-2'>
                         {doc.title}
                     </span>
+                    <div className='flex gap-x-1'>
                     <div
                     onClick={(e) => onRestore(e, doc._id)}
                     role='button'
-                    className='rounded-sm p-2 hover:bg-neutral-200'
+                    className='rounded-sm p-2 hover:bg-neutral-200
+                    dark:hover:bg-neutral-600'
                     >
-                        <Undo className='h-4 w-4 text-muted-foreground'/>
+                        <Undo className='h-4 w-6 text-muted-foreground'/>
                     </div>
                     <ConfirmModal onConfirm={()=>onRemove(doc._id)} >
                         <div 
                     role='button'
-                    className='rounded-sm p-2 hover:bg-neutral-200'
+                    className='rounded-sm p-2 hover:bg-red-500
+                    dark:hover:bg-neutral-600'
                     >
-                        <Trash className='h-4 w-4 text-muted-foreground' />
+                        <Trash className='h-4 w-6 text-muted-foreground' />
                     </div>
                     </ConfirmModal>
+                    </div>
                 </div>
             ))}
         </div>

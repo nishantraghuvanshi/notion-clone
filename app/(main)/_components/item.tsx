@@ -116,7 +116,7 @@ const Item = ({
                 <div
                 role='button'
                 className='h-full rounded-sm hover:bg-neutral-300
-                dark:bg-neutral-600 mr-1'
+                dark:hover:bg-neutral-600 mr-1'
                 onClick={handleExpand}
                 >
                     <ChevronIcon 
