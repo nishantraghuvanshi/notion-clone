@@ -37,3 +37,9 @@ Things I learned:
 - [documentId] method to index the notes pages and its use. Basically square brackets make it dynamic.
 
 - Skeleton is basically to show like an outline of a thing that is going to load.
+
+- Implemented zustand. Need to learn a lot about it. [docs](https://docs.pmnd.rs/zustand/getting-started/introduction)
+
+- Learned about edgestore for file upload on nextJs.
+
+- Error: hostname "files.edgestore.dev" is not configured under images in your `next.config.js`. This error comes when hostname for the image file is not there in next.config.js
