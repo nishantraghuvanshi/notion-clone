@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from 'lucide-react'
 import { useParams, usePathname } from 'next/navigation'
-import React, { ElementRef, use, useEffect, useRef, useState } from 'react'
+import React, { ElementRef, use, useCallback, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import UserItem from './user-item'
 import { useMutation } from 'convex/react'
@@ -37,13 +37,7 @@ const Navigation = () => {
     const params = useParams();
     const router = useRouter()
 
-    useEffect(() => {
-        if(isMobile){
-            collapse();
-        }else{
-            resetWidth();
-        }
-    },[isMobile]);
+
 
 
     useEffect(() => {
@@ -85,7 +79,7 @@ const Navigation = () => {
 
     }
 
-    const resetWidth = () => {
+    const resetWidth = useCallback(() => {
         if (sidebarRef.current && navbarRef.current) {
             setIsCollapsed(false)
             setIsResetting(true)
@@ -95,7 +89,15 @@ const Navigation = () => {
             navbarRef.current.style.setProperty("left", isMobile ? "0" : "240px")
             setTimeout(() => setIsResetting(false),300);     
         }
-    }
+    }, [isMobile]) 
+
+        useEffect(() => {
+        if(isMobile){
+            collapse();
+        }else{
+            resetWidth();
+        }
+    },[isMobile,resetWidth]);
 
     const collapse = () => {
         if(sidebarRef.current && navbarRef.current){

@@ -23,7 +23,7 @@ const Navbar = () => {
             {!isAuthenticated && !isLoading && (
                 <div>
                 <SignInButton mode="modal">
-                    <Button variant="ghost" size="sm">
+                    <Button variant="outline" size="sm" className='mr-2'>
                         Log In
                     </Button>
                 </SignInButton>
