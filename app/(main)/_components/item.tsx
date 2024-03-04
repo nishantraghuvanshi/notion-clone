@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useMutation } from 'convex/react';
 import { ChevronDown, ChevronRight, LucideIcon, MoreHorizontal, PlusIcon, Trash } from 'lucide-react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { toast } from 'sonner';
 
@@ -44,7 +44,7 @@ const Item = ({
 }: Props) => {
     const create= useMutation(api.documents.create);
     const {user} = useUser();
-    // const router= useRouter();
+    const router= useRouter();
     const archive= useMutation(api.documents.archive);
 
     const onArchive = (
@@ -53,6 +53,7 @@ const Item = ({
         event.stopPropagation();
         if(!id) return;
         const promise= archive({id})
+        .then(()=>{router.push('/documents')})
         
         toast.promise(promise, {
             loading: 'Archiving...',
@@ -85,7 +86,7 @@ const Item = ({
             if(!expanded){
                 onExpand?.();
             }
-        // router.push(`/documents/${documentId}`)
+        router.push(`/documents/${documentId}`)
     });
 
         toast.promise(promise, {
@@ -125,11 +126,11 @@ const Item = ({
                 </div>
                 )}
             {documentIcon ? (
-                <div>
+                <div className='shrink-0 mr-2 text-[18px]'>
                     {documentIcon}
                 </div>
             ): (
-                <Icon className='shrink-0 h-[18px] mr-2 text-muted-foreground' /> 
+                <Icon className='shrink-0 h-[18px] mr-2 w-[18px] text-muted-foreground' /> 
 
             )}
             <span className="text-sm font-semibold truncate">{label}</span>

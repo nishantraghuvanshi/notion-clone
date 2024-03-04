@@ -20,6 +20,7 @@ import { TrashBox } from './trash-box'
 import { useSearch } from '@/hooks/use-search'
 import { useSettings } from '@/hooks/use-settings'
 import { Navbar } from './navbar';
+import { useRouter } from 'next/navigation';
 
 
 const Navigation = () => {
@@ -34,6 +35,7 @@ const Navigation = () => {
     const search = useSearch();
     const settings = useSettings();
     const params = useParams();
+    const router = useRouter()
 
     useEffect(() => {
         if(isMobile){
@@ -107,7 +109,8 @@ const Navigation = () => {
     }
 
     const handleCreate =  () => {
-        const promise = create({title:"New Note"});
+        const promise = create({title:"New Note"})
+        .then((documentId)=>( router.push(`/documents/${documentId}`) ))
 
         toast.promise(promise,{
             loading: "Creating...",

@@ -43,3 +43,7 @@ Things I learned:
 - Learned about edgestore for file upload on nextJs.
 
 - Error: hostname "files.edgestore.dev" is not configured under images in your `next.config.js`. This error comes when hostname for the image file is not there in next.config.js
+
+- learned about blocknote(javascript based text editor).[docs](https://www.blocknotejs.org/docs/introduction). Other text editor/library which I have used-> react-quill.
+
+- Recomended way to import editor component using useMemo and dynamic

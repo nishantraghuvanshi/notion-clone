@@ -75,7 +75,7 @@ export const DocumentList = (
                 level === 0 && "block"
             )}
             >
-            No Items Inside
+            Items
         </p>
         {documents.map(document => (
             <div key={document._id}>
