@@ -5,3 +5,5 @@ const PublicLayout = ({ children }: {children: React.ReactNode}) => {
         </div>
     )
 }
+
+export default PublicLayout
