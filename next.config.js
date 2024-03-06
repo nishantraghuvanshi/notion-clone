@@ -4,8 +4,7 @@ const nextConfig = {
         domains:[
             "files.edgestore.dev"
         ]
-    },
-    target: 'serverless',
+    }
 }
 
 module.exports = nextConfig
